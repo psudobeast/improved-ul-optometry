@@ -268,7 +268,7 @@ public class EncounterController : ControllerBase
     private async Task AddPoERecord(Encounter encounter)
     {
         var booking = await _db.Bookings.FindAsync(encounter.BookingId);
-        var clinicType = booking?.ClinicType ?? ULOptometry.Domain.Enums.ClinicType.GeneralOptometry;
+        var clinicType = booking?.ClinicType ?? ClinicType.GeneralOptometry;
         var poe = new PoERecord
         {
             StudentId = encounter.StudentId,
