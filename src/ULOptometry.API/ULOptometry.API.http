@@ -1,0 +1,6 @@
+@ULOptometry.API_HostAddress = http://localhost:5187
+
+GET {{ULOptometry.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

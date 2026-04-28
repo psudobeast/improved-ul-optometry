@@ -1,0 +1,59 @@
+## .NET gitignore
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# Publish output
+[Pp]ublish/
+**/[Pp]ublish/
+*PublishProfiles/
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+# User secrets
+**/secrets.json
+**/appsettings.Development.json
+
+# EF Migrations output (keep migration files but not snapshots artifacts)
+# (migrations source files are kept)
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# dotnet tools
+.config/dotnet-tools.json
