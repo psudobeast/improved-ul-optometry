@@ -267,8 +267,9 @@ public class EncounterController : ControllerBase
 
     private async Task AddPoERecord(Encounter encounter)
     {
-        var booking = await _db.Bookings.FindAsync(encounter.BookingId);
-        var clinicType = booking?.ClinicType ?? ClinicType.GeneralOptometry;
+        var booking = await _db.Bookings.FindAsync(encounter.BookingId)
+            ?? throw new InvalidOperationException($"Booking {encounter.BookingId} not found when creating PoE record.");
+        var clinicType = booking.ClinicType;
         var poe = new PoERecord
         {
             StudentId = encounter.StudentId,
