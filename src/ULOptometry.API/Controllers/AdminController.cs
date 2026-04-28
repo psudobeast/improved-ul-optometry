@@ -61,7 +61,7 @@ public class AdminController : ControllerBase
         if (await _db.Users.AnyAsync(u => u.Email == request.Email))
             return Conflict(new { message = "Email already in use" });
 
-        var tempPassword = $"ULOpt@{Guid.NewGuid().ToString()[..8]}";
+        var tempPassword = $"ULOpt@{Guid.NewGuid():N}{Guid.NewGuid():N}"[..24];
         var user = new User
         {
             Username = request.Username,
